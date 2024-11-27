@@ -9,14 +9,8 @@ bool is_sorted(int* arr, size_t size)
 
 void shuffle(int* arr, size_t size)
 {
-    int j = 0;
     for (size_t i = 0; i < size-1; i++)
-    {
-        j = rand() % (i + 1);
-        int _temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = _temp;
-    }
+	swap(arr[i], arr[rand() % (i + 1)]);
 }
 
 void swap(int& a, int& b)
@@ -141,7 +135,7 @@ void shaker_sort(int* arr, size_t size)
 void counting_sort(int* arr, size_t size)
 {
     int max_value = arr[0];
-    for (int i=0; i < size; i++) max_value = (max_value > arr[i] ? max_value : arr[i]);
+    for (int i=0; i < size; i++) max_value = MAX(max_value, arr[i]);
     
     int* count = (int*)calloc(max_value+1, sizeof(int));
 
