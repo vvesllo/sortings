@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <sstream>
 #include <cassert>
+#include <conio.h>
 
 #include "sorting.hpp"
 
@@ -27,6 +28,8 @@ int main()
     tests(arr, n);
 
     delete[] arr;
+
+    getch();
 }
 void tests(int* arr, size_t n)
 {
